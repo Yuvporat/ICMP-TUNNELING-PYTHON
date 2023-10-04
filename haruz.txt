@@ -1,0 +1,90 @@
+200@#$%{"Date": "Wed, 04 Oct 2023 13:00:09 GMT", "Content-Type": "text/html; charset=UTF-8", "Transfer-Encoding": "chunked", "Connection": "keep-alive", "X-Powered-By": "PHP/7.3.33", "Vary": "Accept-Encoding", "CF-Cache-Status": "DYNAMIC", "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ZDFbUVBVae085fiLzJOXCDDrq3u14E6DMpoh4hM89K%2BSc75rgxlF8nM%2FEBd%2F%2FZtnNyd27Aed95fRIAjmtYLTG%2FVfhFNq1A40LKdeeC89Sjx5H9xJJZM%2FLFrSN36kJ9O3tX0%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "Server": "cloudflare", "CF-RAY": "810d9b3139ff6d8b-MUC", "Content-Encoding": "gzip", "alt-svc": "h3=\":443\"; ma=86400"}@#$%﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="rtl">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="google-site-verification" content="nw8tRDZM9qCDKvRYlcAOS9A7eIXLuVAgWnCB0aQtqLU" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- דף חרוזים -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2526706927460555"
+     data-ad-slot="3568992540"
+     data-ad-format="auto"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-2526706927460555",
+          enable_page_level_ads: true
+     });
+</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>חרוזים בחינם ברשת - מציאת חרוז למילה</title>
+	<link rel="stylesheet" href="stylesheet.css?t=" type="text/css" media="screen" />
+<style type="text/css">
+body { 
+/*background-image: url('writer.jpg');
+background-repeat: no-repeat;
+background-position: -220px 330px;}*/
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3004951-15']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+	<div class="content-box">
+	<h1>חרוז.com</h1>
+	<h2>המקור שלך לחיפוש חרוזים ברשת</h2>
+	<p>
+		כותב שיר או ברכה ומתוסכל מחיפוש אחרי חרוז טוב למילה? הגעת למקום הנכון!<Br/>
+		המערכת האוטומטית שלנו תדאג לסדר לך חרוז מעולה שיגרום לך להראות כמו המשורר שתמיד רצית להיות.<Br/><Br/>
+	</p>
+	<form action="haruzim.php" method="get">
+		<p>
+			אני רוצה למצוא חרוז למילה
+			<div class="input-box">
+			<input type="text" id="word" name="word" value="" />
+			<input type="submit" value="עכשיו!" />
+			</div>
+		</p>
+	</form>
+
+	<Br/>
+	<Br/>
+<div id="last" style="font-size:15px">
+	חיפושים אחרונים:<Br/><br/>
+<a href="haruzim.php?word=בציור">בציור</a></br><a href="haruzim.php?word=פק">פק</a></br><a href="haruzim.php?word=שקטים">שקטים</a></br><a href="haruzim.php?word=מחלקות">מחלקות</a></br><a href="haruzim.php?word=חלומות">חלומות</a></br></div>
+
+	<p id="provider">
+		כל הזכויות שמורות
+	</p>
+	
+	<br/><br/>
+
+	<p id="other">
+		<a href="http://www.prime-rhyme.com" alt="rhyming dictionary">
+			<img src="us.png"/>
+		</a>
+	</p>
+	</div>
+	<div class="bg-row">
+		<img src="writer.png">
+	</div>
+	
+</body>
+</html>
