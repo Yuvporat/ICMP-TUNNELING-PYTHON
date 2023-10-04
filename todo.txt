@@ -1,0 +1,4 @@
+test it with 2 pc's
+change inteface
+configure server IP
+uncomment the code that convert the ICMP data to HTTP response, also test it
