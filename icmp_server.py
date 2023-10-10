@@ -52,7 +52,7 @@ def custom_icmp_response(pkt):
                 method = method[3:]
                 if method == 'POST':
                     content =json.loads( content[3:-3])
-                    # print(2)
+                    print(2)
                 header_content = re.search(r'Headers\[(.*?)\]', headers_str).group(1)
                 header_list = [pair.strip("()'") for pair in header_content.split('), (')]
                 # print('header_list:',header_list)
@@ -73,158 +73,15 @@ def custom_icmp_response(pkt):
                     # Serialize the dictionary to a JSON-formatted string
                     json_headers = json.dumps(response_headers_dict, ensure_ascii=False)
                     msg = '{}@#$%{}@#$%{}'.format(http_response.status_code,json_headers, http_response.text)
+                response_pkt = IP(src=pkt[IP].dst, dst=pkt[IP].src) / ICMP(type=0, id=pkt[ICMP].id, seq=pkt[ICMP].seq)
 
-                reply_packet = IP(dst=packet[IP].src, src=packet[IP].dst) / ICMP(type=0, id=packet[ICMP].id, seq=packet[ICMP].seq)
+                # Modify the response payload to include the original data plus "hello".
+                custom_message = original_payload + b"hello"
+                response_pkt /= msg
 
-                # Set the payload of the reply packet to the custom message
-                reply_packet /= msg
-
-                # Print the modified reply packet
-                print("Modified ICMP Reply Packet:")
-                print(reply_packet.show())
-                # Send the modified reply packet using Scapy's socket
-                send(reply_packet)
+                # Send the response packet.
+                send(response_pkt, verbose=False)
         except Exception as e:
             print("Error:", e)
-
-
-        # Create an ICMP Echo Reply packet with custom data
-        # reply = IP(src=pkt[IP].dst, dst=pkt[IP].src) / ICMP(type=0, id=pkt[ICMP].id, seq=pkt[ICMP].seq) / "Custom Data"
-        # send(reply)
-# def modify_icmp_packet(pkt):
-#     # Check if the packet is an ICMP echo request
-#     if ICMP in pkt and pkt[ICMP].type == 8 and pkt[IP].src:
-#         # Modify the ICMP echo reply payload
-#         print(1)
-#         print(type(pkt[ICMP]),pkt[ICMP].payload)
-#         pkt[ICMP].payload = 'heloooooooooooooow'
-# def modify_icmp_packet(pkt):
-#     # Check if the packet is an ICMP echo request
-#     if ICMP in pkt and pkt[ICMP].type == 8 and pkt[IP].src:
-#         # Modify the ICMP echo reply payload
-
-#         # Convert the ICMP payload to a Scapy packet
-#         icmp_payload = scapy.Raw(pkt[ICMP].payload)
-#         print('icmp_payload:',icmp_payload)
-#         # Modify the ICMP payload packet
-#         icmp_payload.payload = 'heloooooooooooooow'
-
-#         # Set the ICMP payload packet back to the original packet
-#         pkt[ICMP].payload = icmp_payload
-
-#     return pkt
-def modify_icmp_packet(pkt):
-    # Check if the packet is an ICMP echo request
-    if ICMP in pkt and pkt[ICMP].type == 8 and pkt[IP].src:
-        # Modify the ICMP echo reply payload
-
-        # Convert the ICMP payload to bytes
-        icmp_payload = bytes(pkt[ICMP].payload)
-
-        # Modify the ICMP payload
-        new_payload = Raw(load="Modified Reply")
-
-        # Calculate the new checksum for the modified payload
-        checksum = pkt[ICMP].chksum
-        checksum -= checksum_bytes(icmp_payload)
-        checksum += checksum_bytes(new_payload)
-        checksum %= 0xFFFF
-
-        # Update the ICMP payload and checksum
-        pkt[ICMP].payload = new_payload
-        pkt[ICMP].chksum = checksum
-
-        # Provide a custom summary for the packet
-        pkt.custom_summary = "Modified ICMP Packet"
-
-    return pkt
-def modify_icmp_packet(pkt):
-    # Check if the packet is an ICMP echo request
-    if ICMP in pkt and pkt[ICMP].type == 8 and pkt[IP].src:
-        # Modify the ICMP echo reply payload
-
-        # Convert the ICMP payload to bytes
-        icmp_payload = bytes(pkt[ICMP].payload)
-        print('icmp_payload:', icmp_payload)
-
-        pkt[ICMP].payload = Raw(load="Modified Reply")
-        # # Modify the ICMP payload
-        # new_payload = b'heloooooooooooooow'
-
-        # # Calculate the new checksum for the modified payload
-        # checksum = pkt[ICMP].chksum
-        # checksum -= checksum_bytes(icmp_payload)
-        # checksum += checksum_bytes(new_payload)
-        # checksum %= 0xFFFF
-
-        # # Update the ICMP payload and checksum
-        # pkt[ICMP].payload = new_payload
-        # pkt[ICMP].chksum = checksum
-
-        # # Provide a custom summary for the packet
-        # pkt.custom_summary = "Modified ICMP Packet"
-
-    return pkt
-
-def checksum_bytes(data):
-    # Calculate the checksum for a bytes-like object
-    checksum = 0
-    for i in range(0, len(data), 2):
-        if i + 1 < len(data):
-            checksum += (data[i] << 8) + data[i + 1]
-        else:
-            checksum += (data[i] << 8)
-    while checksum > 0xFFFF:
-        checksum = (checksum & 0xFFFF) + (checksum >> 16)
-    return ~checksum & 0xFFFF
-
-def modify_and_send_icmp_reply(packet):
-    if ICMP in packet and packet[ICMP].type == 8:  # Check for ICMP echo request (type 8)
-        # Modify the payload of the received ICMP packet
-        icmp_packet = packet[ICMP]
-        icmp_packet.payload = Raw(load="Modified Reply")
-
-        # Swap source and destination IP addresses
-        packet[IP].src, packet[IP].dst = packet[IP].dst, packet[IP].src
-
-        # Change ICMP type to echo reply (type 0)
-        icmp_packet.type = 0
-
-        # Calculate the ICMP checksum
-        del icmp_packet.chksum
-        icmp_packet.chksum = 0  # Recalculate the checksum
-
-        # Send the modified ICMP reply
-        send(packet)
-
-# Packet handling function
-def packet_handler(packet):
-    if ICMP in packet:
-        modify_and_send_icmp_reply(packet)
-def custom_icmp_responder0(pkt):
-    if ICMP in pkt and pkt[ICMP].type == 0 :
-        print("Received ICMP Echo Request")
-        icmp_payload = bytes(pkt[ICMP].payload)
-        print('icmp_payload:',icmp_payload)
-        # Modify the ICMP payload
-        new_payload = Raw(load="Modified Reply")
-        pkt[ICMP].payload = new_payload
-        return pkt
-def custom_icmp_responder(pkt):
-    if ICMP in pkt and pkt[ICMP].type == 0:  # ICMP Echo Request
-        print("Received ICMP Echo Request")
-        icmp_payload = bytes(pkt[ICMP].payload)
-        print('icmp_payload:', icmp_payload)
-        
-        # Modify the ICMP payload
-        new_payload = Raw(load="Modified Reply")
-        # response_pkt = pkt[ICMP]
-        # response_pkt.payload = new_payload
-                
-        response_pkt = IP(src=pkt[IP].src, dst=pkt[IP].dst) / ICMP(type=0, id=pkt[ICMP].id, seq=pkt[ICMP].seq) / '*****hellowwwwwwww'
-        # response_pkt=pkt[ICMP]
-        # response_pkt.payload = new_payload
-        send(response_pkt, verbose=False)
-                # Send the response packet.
-sniff(filter="icmp", prn=custom_icmp_responder)        #change or remove the interface when outside the pc
-# sniff(filter="icmp",iface="Software Loopback Interface 1", prn=custom_icmp_response)        #change or remove the interface when outside the pc
+          
+sniff(filter="icmp",iface="Software Loopback Interface 1", prn=custom_icmp_response)        #change or remove the interface when outside the pc
