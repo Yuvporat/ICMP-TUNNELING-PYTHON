@@ -1,4 +1,4 @@
-200@#$%{"Date": "Wed, 04 Oct 2023 13:00:09 GMT", "Content-Type": "text/html; charset=UTF-8", "Transfer-Encoding": "chunked", "Connection": "keep-alive", "X-Powered-By": "PHP/7.3.33", "Vary": "Accept-Encoding", "CF-Cache-Status": "DYNAMIC", "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ZDFbUVBVae085fiLzJOXCDDrq3u14E6DMpoh4hM89K%2BSc75rgxlF8nM%2FEBd%2F%2FZtnNyd27Aed95fRIAjmtYLTG%2FVfhFNq1A40LKdeeC89Sjx5H9xJJZM%2FLFrSN36kJ9O3tX0%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "Server": "cloudflare", "CF-RAY": "810d9b3139ff6d8b-MUC", "Content-Encoding": "gzip", "alt-svc": "h3=\":443\"; ma=86400"}@#$%﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+200@#$%{"Date": "Wed, 04 Oct 2023 15:17:10 GMT", "Content-Type": "text/html; charset=UTF-8", "Transfer-Encoding": "chunked", "Connection": "keep-alive", "X-Powered-By": "PHP/7.3.33", "Vary": "Accept-Encoding", "CF-Cache-Status": "DYNAMIC", "Report-To": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=mtwabkP78Q5MHKWBiBSU%2Ft7I7w0ohd%2BAfYtuOClNtD96pP0%2B1pT%2FwsrP4xLIymhtptK9x%2Fv%2BMSedpY3G7oP%2F9TRqVhFtoIJZtfSNIeeCq7XSLbCMShVy1g%2B7xFSxdsVxAbQ%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}", "NEL": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}", "Server": "cloudflare", "CF-RAY": "810e63e5cfec1e65-MUC", "Content-Encoding": "gzip", "alt-svc": "h3=\":443\"; ma=86400"}@#$%﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="rtl">
 <head>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -68,7 +68,7 @@ background-position: -220px 330px;}*/
 	<Br/>
 <div id="last" style="font-size:15px">
 	חיפושים אחרונים:<Br/><br/>
-<a href="haruzim.php?word=בציור">בציור</a></br><a href="haruzim.php?word=פק">פק</a></br><a href="haruzim.php?word=שקטים">שקטים</a></br><a href="haruzim.php?word=מחלקות">מחלקות</a></br><a href="haruzim.php?word=חלומות">חלומות</a></br></div>
+<a href="haruzim.php?word=אפשר">אפשר</a></br><a href="haruzim.php?word=גזענית">גזענית</a></br><a href="haruzim.php?word=מאובק">מאובק</a></br><a href="haruzim.php?word=בנינו">בנינו</a></br><a href="haruzim.php?word=נאחל">נאחל</a></br></div>
 
 	<p id="provider">
 		כל הזכויות שמורות
